@@ -1,0 +1,67 @@
+.pokemon-card {
+    color: aliceblue;
+    max-width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+    height: 300px;
+    display: grid;
+    box-shadow: 5px 5px 3px gray;
+    grid-template-columns: 2fr 1fr 3fr;
+    grid-template-rows: 3fr 1fr 3fr;
+    overflow: hidden;
+    grid-template-areas:
+        'aa id id'
+        'aa im im'
+        'aa im im';
+
+    &:hover {
+        transition: transform ease-in 0.2s;
+        transform: translateY(-3%);
+    }
+    .pokemon-id {
+        grid-area: id;
+        font-size: 60px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        background-color: transparent;
+        overflow: hidden;
+        opacity: 0.6;
+    }
+    .pokemon-name-type {
+        grid-area: aa;
+        overflow: hidden;
+        font-size: 200%;
+
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        background-color: transparent;
+        ul {
+            padding: 0;
+            margin-top: 10px;
+        }
+        li {
+            list-style: none;
+            background-color: rgba(240, 233, 233, 0.6);
+            padding: 5px;
+            border-radius: 20%;
+            margin: 5px;
+            font-size: 16px;
+        }
+    }
+    .pokemon-img {
+        grid-area: im;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        background-image: url('../../assets/images/icon-bg.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

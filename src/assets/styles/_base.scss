@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&family=Roboto:wght@300;500;700;900&display=swap');
+
+body {
+    --bg-color: hsla(0,0%,100%,0.75);
+    font-family: Poppins;
+    font-weight: 700;
+    background-image: linear-gradient(0deg,var(--bg-color),var(--bg-color)),url(https://styleshit-pokedex.netlify.app/static/media/bg.65cf6936.jpg);
+    font: 
+        13px/1.231 arial,
+        helvetica,
+        clean,
+        sans-serif;
+        *font-size: small;
+        *font: x-small;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        color: #444;
+        line-height: 1.4;
+        box-sizing: border-box;
+}
