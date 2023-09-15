@@ -1,3 +1,5 @@
+@import '../../assets/Styles/variables';
+
 .pokemon-card {
     color: aliceblue;
     max-width: 100%;
@@ -5,7 +7,7 @@
     cursor: pointer;
     height: 300px;
     display: grid;
-    box-shadow: 5px 5px 3px gray;
+    box-shadow: $box-shadow;
     grid-template-columns: 2fr 1fr 3fr;
     grid-template-rows: 3fr 1fr 3fr;
     overflow: hidden;
@@ -32,7 +34,7 @@
         grid-area: aa;
         overflow: hidden;
         font-size: 200%;
-
+        text-transform: capitalize;
         justify-content: center;
         align-items: center;
         display: flex;
@@ -49,6 +51,7 @@
             border-radius: 20%;
             margin: 5px;
             font-size: 16px;
+            text-transform: capitalize;
         }
     }
     .pokemon-img {
