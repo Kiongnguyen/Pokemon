@@ -16,6 +16,9 @@ export async function fetchPokemonApi() {
             ability: (pokemonDetail?.abilities || []).map(
                 ({ ability }) => ability?.name,
             ),
+            stats: (pokemonDetail?.stats || []).map(
+                ({ base_stat }) => base_stat,
+            ),
         };
     }
 

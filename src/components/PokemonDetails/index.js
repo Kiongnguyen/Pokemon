@@ -15,7 +15,9 @@ const PokemonDetail = (props) => {
         height,
         weight,
         ability,
+        stats,
     } = props;
+
     return (
         <div
             className={`details-view-container ${
@@ -54,7 +56,7 @@ const PokemonDetail = (props) => {
                 </div>
 
                 <div className="tab">
-                    <table className="pokemon-table">
+                    <table className="pokemon-table-about">
                         <tbody>
                             <tr>
                                 <td>Species</td>
@@ -95,6 +97,105 @@ const PokemonDetail = (props) => {
                                             </span>
                                         ))}
                                     </b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table className="pokemon-table-stats">
+                        <tbody>
+                            <tr>
+                                <td>HP</td>
+                                <td>
+                                    <b>{stats[0]}</b>
+                                    <div className="range-view ">
+                                        <div
+                                            className="range-view-positive"
+                                            style={{ width: `${stats[0]}%` }}
+                                        ></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Attack</td>
+                                <td>
+                                    <b>{stats[1]}</b>
+                                    <div className="range-view ">
+                                        <div
+                                            className="range-view-positive"
+                                            style={{ width: `${stats[1]}%` }}
+                                        ></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Defense</td>
+                                <td>
+                                    <b>{stats[2]}</b>
+                                    <div className="range-view ">
+                                        <div
+                                            className="range-view-positive"
+                                            style={{ width: `${stats[2]}%` }}
+                                        ></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sp. Atk</td>
+                                <td>
+                                    <b>{stats[3]}</b>
+                                    <div className="range-view ">
+                                        <div
+                                            className="range-view-positive"
+                                            style={{ width: `${stats[3]}%` }}
+                                        ></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sp. Def</td>
+                                <td>
+                                    <b>{stats[4]}</b>
+                                    <div className="range-view ">
+                                        <div
+                                            className="range-view-positive"
+                                            style={{ width: `${stats[4]}%` }}
+                                        ></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Speed</td>
+                                <td>
+                                    <b>{stats[5]}</b>
+                                    <div className="range-view ">
+                                        <div
+                                            className="range-view-positive"
+                                            style={{ width: `${stats[5]}%` }}
+                                        ></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td>
+                                    <b>
+                                        {stats.reduce(
+                                            (total, curr) => total + curr,
+                                            0,
+                                        )}
+                                    </b>
+                                    <div className="range-view ">
+                                        <div
+                                            className="range-view-positive"
+                                            style={{
+                                                width: `${stats.reduce(
+                                                    (total, curr) =>
+                                                        total + curr / 6,
+                                                    0,
+                                                )}%`,
+                                            }}
+                                        ></div>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
