@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 
 import './style.scss';
 
@@ -17,6 +18,8 @@ const PokemonDetail = (props) => {
         ability,
         stats,
     } = props;
+
+    const [activeIndex, setActiveIndex] = useState(0);
 
     return (
         <div
@@ -50,13 +53,44 @@ const PokemonDetail = (props) => {
                 <img className="pokemon-image" src={imageUrl} alt={name} />
 
                 <div className="tabs-switch-container">
-                    <button className="tab-switch active">About</button>
-                    <button className="tab-switch">Base Stats</button>
-                    <button className="tab-switch">Evolution</button>
+                    <button
+                        onClick={() => {
+                            setActiveIndex('About');
+                        }}
+                        className={`tab-switch ${
+                            activeIndex === 'About' ? 'active' : ''
+                        }`}
+                    >
+                        About
+                    </button>
+                    <button
+                        onClick={() => {
+                            setActiveIndex('BaseStats');
+                        }}
+                        className={`tab-switch ${
+                            activeIndex === 'BaseStats' ? 'active' : ''
+                        }`}
+                    >
+                        Base Stats
+                    </button>
+                    <button
+                        onClick={() => {
+                            setActiveIndex('Evolution');
+                        }}
+                        className={`tab-switch ${
+                            activeIndex === 'Evolution' ? 'active' : ''
+                        }`}
+                    >
+                        Evolution
+                    </button>
                 </div>
 
                 <div className="tab">
-                    <table className="pokemon-table-about">
+                    <table
+                        className={`pokemon-table-about ${
+                            activeIndex === 'About' ? 'active-table' : ''
+                        }`}
+                    >
                         <tbody>
                             <tr>
                                 <td>Species</td>
@@ -101,7 +135,11 @@ const PokemonDetail = (props) => {
                             </tr>
                         </tbody>
                     </table>
-                    <table className="pokemon-table-stats">
+                    <table
+                        className={`pokemon-table-stats ${
+                            activeIndex === 'BaseStats' ? 'active-table' : ''
+                        }`}
+                    >
                         <tbody>
                             <tr>
                                 <td>HP</td>

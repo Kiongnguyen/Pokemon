@@ -157,6 +157,7 @@
             .pokemon-table-about {
                 width: 100%;
                 padding: 1rem;
+                display: none;
 
                 td {
                     padding: 0.5rem;
@@ -168,11 +169,16 @@
                     vertical-align: middle;
                     border-color: inherit;
                 }
+                &.active-table {
+                    display: flex;
+                    justify-content: left;
+                }
             }
 
             .pokemon-table-stats {
                 width: 100%;
                 padding: 1rem 5rem;
+                display: none;
 
                 tr {
                     display: grid;
@@ -213,6 +219,10 @@
                     display: table-row-group;
                     vertical-align: middle;
                     border-color: inherit;
+                }
+
+                &.active-table {
+                    display: grid;
                 }
             }
         }
