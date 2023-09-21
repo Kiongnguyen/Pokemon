@@ -5,6 +5,7 @@ import Pagination from './components/Pagination';
 import PokemonCard from './components/PokemonCard';
 import Loading from './components/Loading';
 import PokemonDetail from './components/PokemonDetails';
+import GotoTop from './components/GotoTop';
 
 const App = (props) => {
     const [pokemonList, setPokemonList] = useState([]);
@@ -19,7 +20,7 @@ const App = (props) => {
             const pokemonResult = await fetchPokemonApi();
             setIsLoading(false);
             setPokemonList(pokemonResult);
-        }, 2 * 1000);
+        }, 0 * 1000);
     };
 
     useEffect(() => {
@@ -34,7 +35,8 @@ const App = (props) => {
     return (
         <div>
             <div className="pokemon-app">
-                <header>
+                <GotoTop />
+                <header id="header">
                     <h1>
                         P<i></i>kemon
                     </h1>
